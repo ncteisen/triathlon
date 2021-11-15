@@ -2,8 +2,14 @@
 
 usage:
 ```
-python hmb2019_main.py [aspect_list] < data/hmb2019-oly-data.txt
+python3 -m tri.main tri_name [aspect_list]
 ```
+
+tri_name id the name of the tri. Valid options are:
+  * morro_bay
+  * oakland
+  * half_moon_bay
+  * santa_cruz
 
 aspect_list is a list of the various triathlon aspects. Valid options are:
   * elapsed
