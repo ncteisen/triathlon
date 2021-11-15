@@ -1,4 +1,4 @@
-from time import Time
+from tri.time import Time
 
 # Data structure to hold information about an althlete
 class Athlete:

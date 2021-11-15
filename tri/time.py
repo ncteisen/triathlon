@@ -16,18 +16,19 @@ class Time:
     # Alternative ctor from string
     @classmethod
     def fromString(cls, s):
-        s = map(int, s.strip().split(":"))
+        s = list(map(int, s.strip().split(":")))
         return cls(s[0], s[1], s[2])
 
     # Addition overload
     def __add__(self, other):
         ts = ((self.secs + other.secs) + (60 * (self.mins + other.mins)) +
               (3600 * (self.hours + other.hours)))
-        h = ts / 3600
+        h = ts // 3600
         ts -= h * 3600
-        m = ts / 60
+        m = ts // 60
         ts -= m * 60
         assert (ts < 60)
+        n = Time(h, m, ts)
         return Time(h, m, ts)
 
     # Needed to support total ordering
